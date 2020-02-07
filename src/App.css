@@ -69,6 +69,7 @@ menu, nav, section
 }
 
 .planets-container {
+  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -80,6 +81,7 @@ menu, nav, section
 }
 
 .characters-container {
+  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -91,6 +93,7 @@ menu, nav, section
 }
 
 .vehicle-container {
+  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -103,6 +106,7 @@ menu, nav, section
 }
 
 .species-container {
+  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -115,6 +119,7 @@ menu, nav, section
 }
 
 .starships-container {
+  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
