@@ -1,0 +1,166 @@
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, 
+a, 
+ img, 
+ ol, ul, li,
+ form, label, 
+table, tbody, thead, tr, th, td,
+article, aside, 
+footer, header, 
+menu, nav, section 
+ {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	display: block;
+	line-height: 1;
+	list-style: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.start-button {
+  width: 400px;
+}
+
+.segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.film__container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url('yoda.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  background-image: url('vader.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main__container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('millenium-falcon-star-wars-model_Z.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  flex-direction: column;
+}
+
+.planets-container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  background-image: url('Luke.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.characters-container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  background-image: url('Ray.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.vehicle-container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url('Mando.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.species-container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url('Dart_Moul.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.starships-container {
+  width: 100vw;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  background-image: url('starShip.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.upper__container {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 8vh;
+}
+
+.lower__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lower__container-list {
+  padding-top: 5px;
+  height: 63vh;
+  overflow-y: auto;
+}
+
+body .ui.inverted::-webkit-scrollbar-thumb {
+  background: maroon; 
+}
+
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.film__list {
+  width: 500px;
+}
+
+.label {
+  margin-top: 20px;
+}
