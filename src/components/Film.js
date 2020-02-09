@@ -4,9 +4,6 @@ import {
   Button, 
   Dimmer, 
   Loader, 
-  Label, 
-  Segment,
-  List 
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -29,6 +26,11 @@ import Characters from './Characters';
 import Species from './Species';
 import Starships from './Starships';
 import Vehicles from './Vehicle';
+import PlanetsToShow from './PlanetsToShow';
+import SpeciesToShow from './SpeciesToShow';
+import CharactersToShow from './CharactersToShow';
+import StarshipsToShow from './StarshipsToShow';
+import VehiclesToShow from './VehiclesToShow';
 import '../App.css';
 
 const Film = ({ 
@@ -81,13 +83,13 @@ const Film = ({
   if (rightSpecies.length) {
     return rightSpecies.map(species => (
       <Species species={species} key={species.id} />
-    ))
+    ))  
   }
 
   if (rightStarships.length) {
     return rightStarships.map(starship => (
       <Starships starship={starship} key={starship.id} />
-    ))
+    )) 
   }
 
   if (rightVehicles.length) {
@@ -101,7 +103,7 @@ const Film = ({
       <Characters character={character} key={character.id} />
     ))
   }
-  
+
   if (rightPlanet.length) {
     return rightPlanet.map(planet => (
       <Planets planet={planet} key={planet.id} />
@@ -118,111 +120,47 @@ const Film = ({
   ) {
     
     return (
-      <>
-        <div className="film__container">
+      <div className="film__container">
 
-          <Link to="/home">
-            <Button 
-              type="button" 
-              color='red' 
-              onClick={() => loadData()} 
-              icon='home' 
-              className="home-button" 
-            />
-          </Link>
+        <Link to="/home">
+          <Button 
+            type="button" 
+            color='red' 
+            onClick={() => loadData()} 
+            icon='home' 
+            className="home-button" 
+          />
+        </Link>
 
-          <div className="film__list">
-
-            <FilmTable toShow={toShow()} />
-
-            <Label color='red' horizontal>
-              Planets
-            </Label>   
-            <Segment inverted className="segment">
-              <List link inverted>
-                {planets.map(planet => {
-                  return (
-                    <List.Item 
-                      as='a' 
-                      onClick={() => setRightPlanet([...rightPlanet, planet])}
-                      key={planet.id}
-                    >
-                      {planet.name}
-                    </List.Item>
-                )})}              
-              </List>
-            </Segment> 
-
-            <Label color='red' horizontal>
-              Species
-            </Label>   
-            <Segment inverted className="segment">
-              <List link inverted>
-                {species.map(item => (
-                  <List.Item 
-                    as='a'
-                    onClick={() => setRightSpecies([...rightSpecies, item])}
-                    key={item.id}
-                  >
-                    {item.name}
-                  </List.Item>
-                ))}              
-              </List>
-            </Segment> 
-
-            <Label color='red' horizontal>
-              Characters
-            </Label>   
-            <Segment inverted className="segment">
-              <List link inverted>
-                {characters.map(character => (
-                  <List.Item 
-                    as='a'
-                    onClick={() => setRightCharacters([...rightCharacters, character])}
-                    key={character.id}
-                  >
-                    {character.name}
-                  </List.Item>
-                ))}              
-              </List>
-            </Segment> 
-
-            <Label color='red' horizontal>
-              Starships
-            </Label>   
-            <Segment inverted className="segment">
-              <List link inverted>
-                {starships.map(starship => (
-                  <List.Item 
-                    as='a'
-                    onClick={() => setRightStarships([...rightStarships, starship])}
-                    key={starship.id}
-                  >
-                    {starship.name}
-                  </List.Item>
-                ))}              
-              </List>
-            </Segment> 
-
-            <Label color='red' horizontal>
-              Vehicles
-            </Label>   
-            <Segment inverted className="segment">
-              <List link inverted>
-                {vehicles.map(vehicle => (
-                  <List.Item 
-                    as='a'
-                    onClick={() => setRightVehicles([...rightVehicles, vehicle])}
-                    key={vehicle.id}
-                  >
-                    {vehicle.name}
-                  </List.Item>
-                ))}              
-              </List>
-            </Segment> 
-          </div>
-        </div>        
-      </>
+        <div className="film__list">
+          <FilmTable toShow={toShow()} />
+          <PlanetsToShow 
+            planets={planets} 
+            rightPlanet={rightPlanet} 
+            setRightPlanet={setRightPlanet}
+          />
+          <SpeciesToShow 
+            species={species}
+            rightSpecies={rightSpecies}
+            setRightSpecies={setRightSpecies}
+          />
+          <CharactersToShow
+            characters={characters}
+            rightCharacters={rightCharacters}
+            setRightCharacters={setRightCharacters}
+          />
+          <StarshipsToShow
+            starships={starships}
+            rightStarships={rightStarships}
+            setRightStarships={setRightStarships}
+          />
+          <VehiclesToShow
+            vehicles={vehicles}
+            rightVehicles={rightVehicles}
+            setRightVehicles={setRightVehicles}
+          /> 
+        </div>
+      </div>        
     )
   } 
 
@@ -247,8 +185,7 @@ const Film = ({
     };
   }
 
-  const mapDispatch2Props = dispatch => ({
-    
+  const mapDispatch2Props = dispatch => ({    
     loadData: () => dispatch(listURL()),
   });
   

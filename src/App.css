@@ -1,15 +1,11 @@
 
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p, 
-a, 
- img, 
- ol, ul, li,
- form, label, 
+a, img, ol, ul, li, form, label, 
 table, tbody, thead, tr, th, td,
-article, aside, 
-footer, header, 
+article, aside, footer, header, 
 menu, nav, section 
- {
+{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -44,7 +40,6 @@ menu, nav, section
 
 .container {
   width: 100vw;
-  height: 100vh;
   padding: 10vw;
   display: flex;
   align-items: center;
@@ -55,8 +50,8 @@ menu, nav, section
 }
 
 .main__container {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -69,7 +64,6 @@ menu, nav, section
 }
 
 .planets-container {
-  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -81,7 +75,6 @@ menu, nav, section
 }
 
 .characters-container {
-  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -93,7 +86,6 @@ menu, nav, section
 }
 
 .vehicle-container {
-  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -106,7 +98,6 @@ menu, nav, section
 }
 
 .species-container {
-  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -119,7 +110,6 @@ menu, nav, section
 }
 
 .starships-container {
-  height: 100vh;
   width: 100vw;
   padding: 10vw;
   display: flex;
@@ -131,7 +121,6 @@ menu, nav, section
 }
 
 .upper__container {
-  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -162,9 +151,62 @@ body .ui.inverted::-webkit-scrollbar-thumb {
 }
 
 .film__list {
-  width: 500px;
+  max-width: 500px;
 }
 
 .label {
   margin-top: 20px;
 }
+
+.buttons {
+  margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+  .film__list {
+    width: 300px;
+  }
+}
+
+@media (max-width: 770px) {
+  .film__container {
+    width: 100%;
+    padding-top: 80px;
+  }
+
+  .film__list {
+    width: 300px;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .start-button {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .start-button {
+    width: 200px;
+    height: 50px;
+    padding: 0;
+  }
+
+  .film__list {
+    width: 100%;
+  }
+}
+
+@media (max-height: 500px) {
+  .lower__container-list {
+    height: 200px;
+  }
+}
+
+@media (max-height: 400px) {
+  .lower__container-list {
+    height: 100px;
+  }
+}
+

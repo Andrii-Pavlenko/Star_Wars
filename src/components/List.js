@@ -13,7 +13,6 @@ import {
 import { NavLink } from 'react-router-dom';
 
 const ListToPrepare = ({ list, filmToShow, loadOther }) => {
-  
   const loadPlanetsAndFilmToShow = (index, planets2State, vehicles2State, characters2State, starships2State, species2State) => {
     filmToShow(index);
     loadOther(planets2State);
@@ -42,7 +41,7 @@ const ListToPrepare = ({ list, filmToShow, loadOther }) => {
             </Segment>
           </Segment.Group>            
         )
-      })}    
+      })}     
     </List>
   )
 }

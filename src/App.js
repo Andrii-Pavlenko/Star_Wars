@@ -17,10 +17,12 @@ import {
   selectListError,
   selectFilm,
 } from './redux/Selectors';
+
 import './App.css';
 import List from './components/List';
 import ButtonsList from './components/Buttons';
 import FilmShow from './components/Film';
+import useWindowDimensions from './customHooks/useWindowDimensions';
 
 const App = ({
   isLoading,
@@ -29,6 +31,7 @@ const App = ({
   loadData,
   film,
 }) => {
+  const { width } = useWindowDimensions();
   if (isLoading) {
     return (
       <Dimmer active>
@@ -52,6 +55,22 @@ const App = ({
   }
 
   if (!list) {
+    if (width < 400) {
+      return (
+        <div className="container">  
+          <Link to="/home"> 
+            <Button 
+              color='red'
+              className="start-button" 
+              type="button"
+              onClick={() => loadData(true)}
+            >
+              Start!
+            </Button>
+          </Link>
+        </div>
+      )
+    }
     return (   
       <div className="container">  
         <Link to="/home"> 
@@ -69,7 +88,7 @@ const App = ({
     );
   }
 
-  if (film) {
+  if (film) {   
     return (
       <Route path={`/${film}`} exact>
         <FilmShow />

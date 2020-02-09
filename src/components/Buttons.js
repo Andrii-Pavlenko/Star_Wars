@@ -12,13 +12,13 @@ const Buttons = ({ loadData, search, sort }) => {
     return (
       <>
         <Input icon='users' iconPosition='left' placeholder='Search hero...' onChange={(e) => search(e.target.value)}/>
-        <div>
-            <Button type="button" color='red' onClick={() => sort()}>
-                Sort!
-            </Button>
-            <Button type="button" color='red' onClick={() => loadData(true)}>
-                Rfresh!
-            </Button>
+        <div className="buttons">
+          <Button type="button" color='red' onClick={() => sort()}>
+              Sort!
+          </Button>
+          <Button type="button" color='red' onClick={() => loadData(true)}>
+              Rfresh!
+          </Button>
         </div>       
       </>
     )
