@@ -73,10 +73,9 @@ export const otherURL = data => (dispatch) => {
 
 export const listURL = () => (dispatch) => {
   dispatch(startLoading());
-  
   let people = [];
   // first page
-  return axios("https://swapi.co/api/films/")
+  return axios("https://swapi.dev/api/films/")
     .then(response => {
         // collect people from first page
         people = response.data.results;

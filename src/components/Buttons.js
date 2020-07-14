@@ -9,30 +9,30 @@ import {
 import '../App.css';
 
 const Buttons = ({ loadData, search, sort }) => {
-    return (
-      <>
-        <Input icon='users' iconPosition='left' placeholder='Search hero...' onChange={(e) => search(e.target.value)}/>
-        <div className="buttons">
-          <Button type="button" color='red' onClick={() => sort()}>
-              Sort!
-          </Button>
-          <Button type="button" color='red' onClick={() => loadData(true)}>
-              Rfresh!
-          </Button>
-        </div>       
-      </>
-    )
-  } 
+  return (
+    <>
+      <Input icon='users' iconPosition='left' placeholder='Search hero...' onChange={(e) => search(e.target.value)}/>
+      <div className="buttons">
+        <Button type="button" color='red' onClick={() => sort()}>
+            Sort!
+        </Button>
+        <Button type="button" color='red' onClick={() => loadData(true)}>
+            Rfresh!
+        </Button>
+      </div>       
+    </>
+  )
+} 
 
-  const mapDispatch2Props = dispatch => ({
-    loadData: () => dispatch(listURL()),
-    search: value => dispatch(searchHeros(value)),
-    sort: () => dispatch(sortHeros()),
-  });
-  
-  const ButtonsList = connect(
-    null,
-    mapDispatch2Props,
-  )(Buttons);
-  
-  export default ButtonsList;
+const mapDispatch2Props = dispatch => ({
+  loadData: () => dispatch(listURL()),
+  search: value => dispatch(searchHeros(value)),
+  sort: () => dispatch(sortHeros()),
+});
+
+const ButtonsList = connect(
+  null,
+  mapDispatch2Props,
+)(Buttons);
+
+export default ButtonsList;
