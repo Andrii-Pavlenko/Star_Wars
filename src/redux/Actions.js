@@ -60,6 +60,7 @@ export const searchHeros = value => (dispatch) => {
 };
 
 export const otherURL = data => (dispatch) => {
+  // debugger
   dispatch(startLoading(data));
 
   const promises = data.map(data => fetch(data).then(y => y.json()));
@@ -72,10 +73,11 @@ export const otherURL = data => (dispatch) => {
 };
 
 export const listURL = () => (dispatch) => {
+  // debugger
   dispatch(startLoading());
   let people = [];
   // first page
-  return axios("https://swapi.dev/api/films/")
+  return axios("http://swapi.dev/api/films/")
     .then(response => {
         // collect people from first page
         people = response.data.results;
